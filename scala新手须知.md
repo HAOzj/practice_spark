@@ -10,10 +10,11 @@ scala安装2.1.1就可以,最新版本对应的包不全.
 # IDE
 IDE使用intellij idea,在File > Setting > Plugin中下载
 - scala
-- SBT,scala编译工具
+- SBT,scala编译工具  
+![](https://github.com/HAOzj/practice_spark/tree/master/image/idea_plugin.jpg)
 
 # scala项目
-创建scala-sbt项目
+创建scala-sbt项目,![如图](https://github.com/HAOzj/practice_spark/tree/master/image/scala_sbt.jpg).
 
 # 代码结构
 代码从scala文件夹开始
