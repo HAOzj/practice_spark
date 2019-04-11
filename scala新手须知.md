@@ -22,5 +22,5 @@ object才可以运行.
 
 # 文件编译(生成.jar文件)  
 import库要从 https://mvnrepository.com 网站上下对应的sbt命令,注意和scala版本匹配  
-编译文件时打开sbt shell后, 输入 package.![如图所示](https://github.com/HAOzj/practice_spark/tree/master/image/sbt_shell.jpg)
+编译文件时打开sbt shell后, 输入 package,.jar文件就会生成在![图中](https://github.com/HAOzj/practice_spark/tree/master/image/sbt_shell.jpg)从上到下数第二个标红处.
 
