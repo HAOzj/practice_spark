@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="518662a4-1fea-48b9-9627-afedb7902998" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spark_basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scala_basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/scala_basics.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spark_basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/spark_basics.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +30,8 @@
         <entry file="file://$PROJECT_DIR$/scala_basics.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-213">
-                <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+              <first_editor relative-caret-position="760">
+                <caret line="40" selection-start-line="40" selection-end-line="40" />
               </first_editor>
               <second_editor />
             </state>
@@ -41,8 +42,8 @@
         <entry file="file://$PROJECT_DIR$/spark_basics.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="475">
-                <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+              <first_editor relative-caret-position="598">
+                <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
               </first_editor>
               <second_editor />
             </state>
@@ -73,6 +74,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -84,7 +86,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -116,17 +117,20 @@
       <updated>1598604773782</updated>
       <workItem from="1598604774987" duration="2074000" />
       <workItem from="1598840019760" duration="2936000" />
+      <workItem from="1598961111777" duration="551000" />
+      <workItem from="1599201288000" duration="734000" />
+      <workItem from="1599478870860" duration="745000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5010000" />
+    <option name="totallyTimeSpent" value="7040000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2532189" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -167,8 +171,8 @@
     <entry file="file://$PROJECT_DIR$/scala_basics.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-213">
-            <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+          <first_editor relative-caret-position="760">
+            <caret line="40" selection-start-line="40" selection-end-line="40" />
           </first_editor>
           <second_editor />
         </state>
@@ -177,8 +181,8 @@
     <entry file="file://$PROJECT_DIR$/spark_basics.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="475">
-            <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <first_editor relative-caret-position="598">
+            <caret line="48" column="22" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="22" />
           </first_editor>
           <second_editor />
         </state>

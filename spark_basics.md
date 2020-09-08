@@ -12,7 +12,12 @@ spark.conf.get("spark.sql.shuffle.partitions")
 
 
 # reduceByKey
-PySpark reduceByKey() transformation is used to merge the values of each key using an associative reduce function on PySpark RDD. It is a wider transformation as it shuffles data across multiple partitions and It operates on pair RDD (key/value pair).
+PySpark reduceByKey() transformation is used to merge the values of each key using an associative reduce function on PySpark RDD.   
+It is a wider transformation as it shuffles data across multiple partitions and It operates on pair RDD (key/value pair).
+args:
+    func, 聚合函数
+    numPartitions
+    partitionFunc
 
 > https://sparkbyexamples.com/pyspark/pyspark-reducebykey-usage-with-examples/
 
@@ -25,3 +30,20 @@ DF.collect()
 
 # Random.nextInt
 equiprob取[0, n)之间的整数
+
+
+# spark broadcast 
+各个slave端都需要同一个数据,并且只有读取操作
+例如: 一个object对象,一个map或者bloomFilter等
+
+### broadcast类型变量和传输一个可序列化的变量的区别 ?
+
+1. broadcast类型变量可以保证只在executor的内存中存在一份
+2. 将要传输的变量不需要实现Serializable接口
+3. 可以高效地传输较大的数据集
+
+> https://www.jianshu.com/p/c5c71bdcccc0
+
+# sort
+
+sort, sortBy, sortWith
