@@ -36,17 +36,10 @@ def main(args: Array[String]) : Unit = {
 } 
 ```
 
-# spark broadcast 
-各个slave端都需要同一个数据,并且只有读取操作
-例如: 一个object对象,一个map或者bloomFilter等
 
-### broadcast类型变量和传输一个可序列化的变量的区别 ?
+# _
+wildcard
 
-1. broadcast类型变量可以保证只在executor的内存中存在一份
-2. 将要传输的变量不需要实现Serializable接口
-3. 可以高效地传输较大的数据集
-
-> https://www.jianshu.com/p/c5c71bdcccc0
 
 
 # udf
