@@ -41,7 +41,6 @@ def main(args: Array[String]) : Unit = {
 wildcard
 
 
-
 # udf
 udf中input param如果是String, withColumn时的input param需要是col(fieldName), whose value is of type String;  
 可以通过 withColumn(fieldName, lit("a"))
@@ -57,12 +56,16 @@ for (name <- names) println(name)
 ```
 
 # List
+List的元素不可重新赋值
 ```
 val a = List(1, 2)
 val b = List(3, 4)
 
 // append
-3 :+ a  
+a :+ 3  
+
+// prepend
+3 +: a
 
 // merge
 a ++ b
@@ -74,4 +77,20 @@ List.concat(a, b)
 ```
 val a = 1f
 ```
+
+# Array 
+Array的元素可以重新赋值
+```
+val a = Array(1, 2)
+
+a(0) = 2 // Array[Int] = Array(2, 2)
+
+// append
+a :+ 3
+
+```
+
+
+# sort
+sort, sortBy, sortWith
 

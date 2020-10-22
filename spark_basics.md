@@ -28,10 +28,6 @@ args:
 DF.collect() 
 ```
 
-# Random.nextInt
-equiprob取[0, n)之间的整数
-
-
 # spark broadcast 
 各个slave端都需要同一个数据,并且只有读取操作
 例如: 一个object对象,一个map或者bloomFilter等
@@ -44,6 +40,7 @@ equiprob取[0, n)之间的整数
 
 > https://www.jianshu.com/p/c5c71bdcccc0
 
-# sort
+# groupByKey vs ReduceByKey
+It's advised to use ReduceByKey over groupByKey, especially when dealing with large datasets. The reason lies in the "shuffle" or "data exchange" between nodes.  
+To be precise, before reducing the former transfers data from all nodes, which requires serialization and deserialization and therefore consumes way more computing resources, memory and time. The latter reduces locally before the data is sent to the nodes which perform the final "reduce" operation. 
 
-sort, sortBy, sortWith
