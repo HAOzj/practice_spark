@@ -39,13 +39,26 @@ object HTMLFormatter {
     val tblContent = (tblNames zip dfs).map{ t2 =>
       val df = t2._2
       val tblName = t2._1
-      val cols = df.columns
+      val colDtypes = df.dtypes
+      val colExprs = colDtypes.map{colDtype =>
+        val col = colDtype._1
+        val dtype = colDtype._2
+        if (dtype != "FloatType") s"cast($col as string) as $col" else s"cast($col as decimal(10, 7)) as $col"
+      }
       val _header = cols.mkString("<th>", "</th><th>", "</th>")
-      val _row = df.selectExpr(cols.map(col => s"cast($col as string) as $col"): _*).map{ row =>
-        val vals = cols.map{ col =>
-          row.getAs[String](col)}
-        vals.mkString("<td>", "</td><td>", "</td>")
-      }.collect()
+      val _row = df.selectExpr(colExprs: _*)
+        .map{ row =>
+          val vals = colDtypes.map{colDtype =>
+            val col = colDtype._1
+            val dtype = colDtype._2
+            if (dtype != "FloatType") {
+              row.getAs[String](col)
+            } else {
+              row.getAs[java.math.BigDecimal](col).stripTrailingZeros().toString
+            }
+          }
+          vals.mkString("<td>", "</td><td>", "</td>")
+        }.collect()
 
       s"<h2>$tblName</h2><table>"  + (Array[String](_header) ++ _row).mkString("<tr>", "</tr><tr>", "</tr>") + "</table>"
     }.mkString("\n")
