@@ -45,7 +45,7 @@ object HTMLFormatter {
         val dtype = colDtype._2
         if (dtype != "FloatType") s"cast($col as string) as $col" else s"cast($col as decimal(10, 7)) as $col"
       }
-      val _header = cols.mkString("<th>", "</th><th>", "</th>")
+      val _header = cols.map(_._1).mkString("<th>", "</th><th>", "</th>")
       val _row = df.selectExpr(colExprs: _*)
         .map{ row =>
           val vals = colDtypes.map{colDtype =>
