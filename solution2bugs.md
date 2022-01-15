@@ -5,7 +5,7 @@ scala中,class extends Serializable和改用可序列化的类可以解决
 spark-submit时扩大内存,比如设置参数driver-memory 2G 
 
 # print
-print时用string interpolation时(s"  ")
+print时用string interpolation时(s"  "),要注意某些特殊字符,比如%
 ```
 val s = "a%a"
 s"${s.replace("%", "%%")}"
