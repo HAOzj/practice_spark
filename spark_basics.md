@@ -1,3 +1,12 @@
+# 自定义partition数
+
+--conf spark.default.parallelism=800  # rdd的并行数
+--conf spark.sql.shuffle.partitions=800 # df的并行数
+
+# job, stage, task
+job对应一个action, stage对应一个shuffle, task对应一个并行任务
+
+
 # reduce vs fold  
 
 reduce是从左到右的迭代,第一个值为初始值;  
