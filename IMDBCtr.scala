@@ -60,18 +60,30 @@ object utils {
   ) = {
     import spark.implicits._
     val dfWithCtr = df.withColumn(ctrField, OriginalCtrUDF(col(imprField), col(clkField)))
-    val c = dfWithCtr.selectExpr(s"avg(${ctrField}) as m").map(_.getAs[Double]("m")).head
-    val m = df.where(s"${clkField} > 0").stat.approxQuantile(imprField, Array(quantile), 0.2).head
-    val wrUDF = udf((impr: Long, click: Long) => {
-      val wr = if (impr < m) {
-        (click + c * m) / (impr.toDouble + m)
-      } else {
-        click / impr.toDouble
-      }
-      wr
-    })
+    val clkDF = df.where(s"${clkField} > 0").persist()
 
-    df.withColumn(ctrField, wrUDF(col(imprField), col(clkField)))
+    /**
+     * 如果有ctr > 0,则平滑
+     * 否则就仍然为0
+     */
+    val res = if (clkDF.count() > 0) {
+      val c = dfWithCtr.selectExpr(s"avg(${ctrField}) as m").map(_.getAs[Double]("m")).head
+      val m = clkDF.stat.approxQuantile(imprField, Array(quantile), 0.2).head
+      val wrUDF = udf((impr: Long, click: Long) => {
+        val wr = if (impr < m) {
+          (click + c * m) / (impr.toDouble + m)
+        } else {
+          click / impr.toDouble
+        }
+        wr
+      })
+
+      df.withColumn(ctrField, wrUDF(col(imprField), col(clkField)))
+    } else {
+      dfWithCtr
+    }
+    clkDF.unpersist()
+    res
   }
 
   val OriginalCtrUDF = udf((impr: Long, click: Long) => {
