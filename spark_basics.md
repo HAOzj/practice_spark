@@ -107,3 +107,36 @@ args:
 
 适用场景: 大表很多key分布不均匀
 要求: 内存要求比较高
+
+```sql
+(
+    select concat_ws('_', item_id, ceil(rand() * 100)) as new_item_id
+        , *
+    from sample_tbl
+    where grass_date = '${grass_date}' and grass_region = '${grass_region}'
+) sample
+left join(
+    select *
+    from b
+    where  region = '${grass_region}'
+        and ds=translate(date_sub('${grass_date}', 1), '-', '')
+) offline_user_features
+on (offline_user_features.user_id = sample.user_id)
+left join(
+    select *, concat_ws('_', voucher_id[0], rk) as new_owner_key
+    from(
+        select *
+        from a
+        where ds=translate(date_sub('${grass_date}', 1), '-', '')
+            and region = '${grass_region}'
+    ) t1
+    join(
+        select row_number() over (order by rand()) as rk
+        from a
+        where ds=translate(date_sub('${grass_date}', 1), '-', '')
+            and region = '${grass_region}'
+        limit 100
+    ) t2
+) offline_voucher_features
+on (sample.new_item_id = offline_voucher_features.new_owner_key)
+```
