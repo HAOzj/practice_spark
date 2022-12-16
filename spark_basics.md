@@ -1,24 +1,7 @@
 # 自定义partition数  
 
 --conf spark.default.parallelism=800  # rdd的并行数  
---conf spark.sql.shuffle.partitions=800 # df的并行数  
-
-# job, stage, task  
-job对应一个action, stage对应一个shuffle, task对应一个并行任务  
-
-
-# reduce vs fold  
-
-reduce是从左到右的迭代,第一个值为初始值;  
-fold也是从左到右的迭代,不过带有初始值
-
-
-reduce相当于
-```
-var res = l.head
-l.slice(1, l.size).foreach{ele => res = op(res, ele)}
-res
-```
+--conf spark.sql.shuffle.partitions=800 # df的并行数
 
 # Repartition and Coalesce
 这两个功能都是用来帮助分块,
@@ -33,25 +16,11 @@ spark.conf.get("spark.sql.shuffle.partitions")
 > https://datanoon.com/blog/spark_repartition_coalesce/#3-repartition
 
 
-<<<<<<< HEAD
-# reduceByKey
-PySpark reduceByKey() transformation is used to merge the values of each key using an associative reduce function on PySpark RDD.   
-It is a wider transformation as it shuffles data across multiple partitions and It operates on pair RDD (key/value pair).
-args:
-    func, 聚合函数
-    numPartitions
-    partitionFunc
-
-> https://sparkbyexamples.com/pyspark/pyspark-reducebykey-usage-with-examples/
-
 # DF的foreachPartition
 参数为Iterator\[Row\]类型
 
-
-=======
->>>>>>> 32adaeb5a6996a005c8b480bf5c39ba16ef647bc
 # collect()
-
+action算子
 ```scala
 // 返回一个array，可以用for loop
 DF.collect() 
@@ -78,6 +47,18 @@ DF.collect()
 一些算子需要数据按照key来重新分配,这个叫做shuffle.  
 引起shuffle的算子包括distinct、groupByKey、reduceByKey、aggregateByKey、join、repartition
 
+# reduce vs fold  
+
+reduce是从左到右的迭代,第一个值为初始值;  
+fold也是从左到右的迭代,带有初始值
+
+
+reduce相当于
+```
+var res = l.head
+l.slice(1, l.size).foreach{ele => res = op(res, ele)}
+res
+```
 
 # groupByKey vs ReduceByKey
 优先使用后者,因为两者的shuffle方式不同.  
