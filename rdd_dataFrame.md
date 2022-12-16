@@ -32,11 +32,16 @@ DataFrame借鉴了pandas和r的DataFrame,是对RDD结构化的产物,内置了�
 # Python中Spark DF和Pandas DF的相互转化
 
 ### pd DF转spark DF:
+```python
 spark = SparkSession \
         .builder \
         .appName('my_first_app_name') \
         .getOrCreate()
 df_spark = spark.createDataFrame(df_pandas, schema=columns)
 
+```
+
 ### spark DF转pd DF
+```python
 df_pandas = df_spark.toPandas()
+```

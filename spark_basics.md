@@ -21,6 +21,10 @@ args:
 
 > https://sparkbyexamples.com/pyspark/pyspark-reducebykey-usage-with-examples/
 
+# DF的foreachPartition
+参数为Iterator\[Row\]类型
+
+
 # collect()
 
 ```scala
@@ -36,7 +40,7 @@ equiprob取[0, n)之间的整数
 各个slave端都需要同一个数据,并且只有读取操作
 例如: 一个object对象,一个map或者bloomFilter等
 
-### broadcast类型变量和传输一个可序列化的变量的区别 ?
+### broadcast类型变量和传输一个可序列化的变量的区别
 
 1. broadcast类型变量可以保证只在executor的内存中存在一份
 2. 将要传输的变量不需要实现Serializable接口
