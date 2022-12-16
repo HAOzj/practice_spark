@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="518662a4-1fea-48b9-9627-afedb7902998" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/application_job_stage_task.md" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/interact_with_db.md" afterDir="false" />
+=======
+    <list default="true" id="7485c4ad-0efe-4606-8cdb-58366d81aa45" name="Default Changelist" comment="">
+>>>>>>> 32adaeb5a6996a005c8b480bf5c39ba16ef647bc
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rdd_dataFrame.md" beforeDir="false" afterPath="$PROJECT_DIR$/rdd_dataFrame.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spark_basics.md" beforeDir="false" afterPath="$PROJECT_DIR$/spark_basics.md" afterDir="false" />
@@ -17,6 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+<<<<<<< HEAD
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -50,12 +55,19 @@
         </subPane>
       </pane>
     </panes>
+=======
+  <component name="ProjectId" id="1hJUjK52lLU16kzyktxk16di9T3" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+>>>>>>> 32adaeb5a6996a005c8b480bf5c39ba16ef647bc
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+<<<<<<< HEAD
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -64,13 +76,18 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
+=======
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+>>>>>>> 32adaeb5a6996a005c8b480bf5c39ba16ef647bc
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="518662a4-1fea-48b9-9627-afedb7902998" name="Default Changelist" comment="" />
-      <created>1598604773782</created>
+      <changelist id="7485c4ad-0efe-4606-8cdb-58366d81aa45" name="Default Changelist" comment="" />
+      <created>1599728822614</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1598604773782</updated>
       <workItem from="1598604774987" duration="2074000" />
       <workItem from="1598840019760" duration="2936000" />
@@ -156,5 +173,16 @@
         </state>
       </provider>
     </entry>
+=======
+      <updated>1599728822614</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="261" key="FileChooserDialogImpl" timestamp="1600760403656">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600760403656" />
+>>>>>>> 32adaeb5a6996a005c8b480bf5c39ba16ef647bc
   </component>
 </project>
