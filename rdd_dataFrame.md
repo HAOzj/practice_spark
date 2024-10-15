@@ -37,11 +37,12 @@ spark = SparkSession \
         .builder \
         .appName('my_first_app_name') \
         .getOrCreate()
-df_spark = spark.createDataFrame(df_pandas, schema=columns)
+df_spark = spark.createDataFrame(pdf, schema=columns)
 
 ```
 
 ### spark DF转pd DF
 ```python
-df_pandas = df_spark.toPandas()
+pdf = df_spark.toPandas()
 ```
+
