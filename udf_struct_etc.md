@@ -24,6 +24,7 @@ spark: SparkSession = SparkSession.builder.config(conf=SparkConf().setExecutorEn
 spark.udf.register('udf1', udf1)
 
 # 以下三种方法等效
+# 效率上,第三种方法最好,因为是spark udf,不需要spark 引擎和JVM的Serde
 df1 = spark.sql("select udf1(name) as russian_name, name from name_tbl")
 df = spark.sql("select name from name_tbl")
 df2 = df.select(udf1(col("name")).alias("russian_name"), "age")
